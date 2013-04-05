@@ -3,7 +3,7 @@ package lines_test
 import (
 	"testing"
 	"os"
-	"lines"
+	"code.google.com/p/golines"
 )
 
 func TestNumLines(t *testing.T) {
@@ -22,11 +22,11 @@ func TestReadLine(t *testing.T) {
 	if err != nil {
 		t.Errorf(err.Error())
 	}
-	if line != "line 1" {
+	if line != "line 0" {
 		t.Errorf("invalid line: %v\n", line)
 	}
 	line, err = l.ReadLine()
-	if line != "line 2" {
+	if line != "line 1" {
 		t.Errorf("invalid line: %v\n", line)
 	}
 }
@@ -38,10 +38,10 @@ func TestReadLines(t *testing.T) {
 	if err != nil {
 		t.Errorf(err.Error())
 	}
-	if line[0] != "line 1" {
+	if line[0] != "line 0" {
 		t.Errorf("invalid line: %v\n", line[0])
 	}
-	if line[1] != "line 2" {
+	if line[1] != "line 1" {
 		t.Errorf("invalid line: %v\n", line[1])
 	}
 }

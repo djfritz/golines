@@ -34,7 +34,7 @@ func (l *Liner) NumLines() int {
 		}
 		sum += bytes.Count(b[:n], []byte{'\n'})
 	}
-	pos, err = l.f.Seek(0, int(pos))
+	pos, err = l.f.Seek(pos, os.SEEK_SET)
 	return sum
 }
 
@@ -66,7 +66,7 @@ func (l *Liner) ReadLine() (string, error) {
 			return ret, err
 		}
 	}		
-	l.f.Seek(int64(len(ret) + 1), int(pos))
+	l.f.Seek(pos + int64(len(ret) + 1), os.SEEK_SET)
 	return ret, nil
 }
 
