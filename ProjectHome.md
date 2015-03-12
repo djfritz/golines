@@ -1,0 +1,1 @@
+golines - a simple line oriented input helper package for Go
